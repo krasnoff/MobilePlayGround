@@ -7,19 +7,34 @@
 
 import React from 'react';
 import {
+  Image,
+  ScrollView,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 
 function App(): JSX.Element {
   return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Text>Hello world</Text>
-    </View>
+    <ScrollView>
+      <Text>Some text</Text>
+      <View>
+        <Text>Some more text</Text>
+        <Image source={{
+          uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+        }} style={{width: 200, height: 200}}></Image>
+      </View>
+      <View style={{
+        alignItems: 'center'
+      }}>
+        <TextInput style={{
+            height: 40,
+            borderColor: 'gray',
+            borderWidth: 1,
+            width: '80%'
+        }} placeholder='You can type in me'></TextInput>
+      </View>
+    </ScrollView>
     
   );
 }
