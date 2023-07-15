@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   ScrollView,
@@ -15,6 +15,8 @@ import {
 } from 'react-native';
 
 function App(): JSX.Element {
+  const [text, setText] = useState<string>('')
+
   return (
     <ScrollView>
       <Text>Some text</Text>
@@ -26,13 +28,20 @@ function App(): JSX.Element {
       </View>
       <View style={{
         alignItems: 'center'
-      }}>
+        }}>
         <TextInput style={{
             height: 40,
             borderColor: 'gray',
             borderWidth: 1,
             width: '80%'
-        }} placeholder='You can type in me'></TextInput>
+          }} placeholder='You can type in me'
+          onChangeText={newText => setText(newText)}
+        ></TextInput>
+      </View>
+      <View  style={{
+          width: '90%'
+        }}>
+        <Text>{text}</Text>
       </View>
     </ScrollView>
     
