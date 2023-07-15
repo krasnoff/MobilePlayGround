@@ -6,15 +6,10 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   Text,
   View,
 } from 'react-native';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
 function App(): JSX.Element {
   return (
