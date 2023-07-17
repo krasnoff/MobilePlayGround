@@ -7,6 +7,7 @@
 
 import React, { useState } from 'react';
 import {
+  Button,
   Image,
   ScrollView,
   Text,
@@ -14,7 +15,7 @@ import {
   View,
 } from 'react-native';
 
-function HomeScreen(): JSX.Element {
+function HomeScreen( {navigation}: any ): JSX.Element {
   const [text, setText] = useState<string>('')
 
   return (
@@ -43,6 +44,14 @@ function HomeScreen(): JSX.Element {
         }}>
         <Text>{text}</Text>
       </View>
+      <View  style={{
+          width: '90%'
+        }}>
+          <Button
+            title="Go to Details"
+            onPress={() => navigation.navigate('Details')}
+          />
+        </View>
     </ScrollView>
     
   );
