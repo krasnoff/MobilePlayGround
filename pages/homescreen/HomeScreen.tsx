@@ -14,9 +14,13 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { useFonts } from 'expo-font';
 
 function HomeScreen( {navigation}: any ): JSX.Element {
-  const [text, setText] = useState<string>('')
+  const [text, setText] = useState<string>('');
+  const [fontsLoaded] = useFonts({
+    'Heebo-Regular': require('../../assets/fonts/heebo/Heebo-Regular.ttf'),
+  });
 
   return (
     <ScrollView>
@@ -51,6 +55,9 @@ function HomeScreen( {navigation}: any ): JSX.Element {
             title="Go to Details"
             onPress={() => navigation.navigate('Details')}
           />
+        </View>
+        <View>
+          <Text style={{ fontFamily: 'Heebo-Regular', fontSize: 27 }}>שלום רב פונטים בעברית ץ</Text>
         </View>
     </ScrollView>
     
