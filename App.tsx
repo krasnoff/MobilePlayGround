@@ -49,7 +49,6 @@ function App(): JSX.Element {
             headerTintColor: '#fff',
             headerTitleStyle: {
               fontWeight: 'bold',  
-              fontFamily: 'Heebo-Bold'            
             },
             headerTitleAlign: "center",
             headerShadowVisible: true, 
