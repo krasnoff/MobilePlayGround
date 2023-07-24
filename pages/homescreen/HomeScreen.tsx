@@ -19,6 +19,9 @@ import {
 } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { FAB, IconComponentProvider, Icon } from "@react-native-material/core";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 
 function HomeScreen( {navigation}: any ): JSX.Element {
   const [text, setText] = useState<string>('');
@@ -60,20 +63,39 @@ function HomeScreen( {navigation}: any ): JSX.Element {
           ></TextInput>
         </View>
         <View  style={{
-            width: '90%'
+            width: '90%',
+            alignItems: 'center',
+            marginLeft: 10,
+            marginRight: 10,
           }}>
           <Text>{text}</Text>
         </View>
         <View  style={{
-            width: '90%'
+            width: '90%',
+            alignItems: 'center',
+            marginLeft: 10,
+            marginRight: 10,
           }}>
             <Button
               title="Go to Details"
               onPress={() => navigation.navigate('Details')}
             />
-          </View>
-          <View>
+        </View>
+        <View  style={{
+            width: '90%',
+            alignItems: 'center',
+            marginLeft: 10,
+            marginRight: 10,
+          }}>
             <Text style={{ fontFamily: 'Heebo-Regular', fontSize: 27 }}>שלום רב פונטים בעברית ץ</Text>
+        </View>
+        <View  style={{
+            width: '90%',
+            alignItems: 'center',
+            marginLeft: 10,
+            marginRight: 10,
+          }}>
+            <FAB color="primary">+</FAB>
           </View>
       </ScrollView>
     </SafeAreaView>

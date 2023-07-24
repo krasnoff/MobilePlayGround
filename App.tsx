@@ -36,6 +36,7 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
+    
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen 
           name="Home" 
@@ -56,6 +57,7 @@ function App(): JSX.Element {
         />
         <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
+    
     </NavigationContainer>
   );
 }
