@@ -13,6 +13,7 @@ import DetailsScreen from './pages/details-screen/DetailedScreen';
 import { useFonts } from 'expo-font';
 import { Text, View } from 'react-native';
 
+
 const Stack = createNativeStackNavigator();
 
 function LogoTitle() {
@@ -35,6 +36,7 @@ function App(): JSX.Element {
 
 
   return (
+    
     <NavigationContainer>
     
       <Stack.Navigator initialRouteName="Home">
@@ -59,6 +61,7 @@ function App(): JSX.Element {
       </Stack.Navigator>
     
     </NavigationContainer>
+    
   );
 }
 

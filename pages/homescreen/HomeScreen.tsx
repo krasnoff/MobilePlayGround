@@ -19,8 +19,7 @@ import {
 } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { FAB, IconComponentProvider, Icon } from "@react-native-material/core";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { FAB } from '@rneui/themed';
 
 
 function HomeScreen( {navigation}: any ): JSX.Element {
@@ -95,7 +94,11 @@ function HomeScreen( {navigation}: any ): JSX.Element {
             marginLeft: 10,
             marginRight: 10,
           }}>
-            <FAB color="primary">+</FAB>
+            <FAB
+              visible={true}
+              color="green"
+              
+            >+</FAB>
           </View>
       </ScrollView>
     </SafeAreaView>
