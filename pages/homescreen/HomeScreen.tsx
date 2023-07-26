@@ -12,6 +12,7 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  StyleSheet,
   Text,
   TextInput,
   View,
@@ -22,7 +23,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { FAB } from '@rneui/themed';
 
 
-function HomeScreen( {navigation}: any ): JSX.Element {
+function HomeScreen({ navigation }: any): JSX.Element {
   const [text, setText] = useState<string>('');
   const [fontsLoaded] = useFonts({
     'Heebo-Regular': require('../../assets/fonts/heebo/Heebo-Regular.ttf'),
@@ -31,78 +32,70 @@ function HomeScreen( {navigation}: any ): JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <View style={[
+      styles.container,
+      {
+        // Try setting `flexDirection` to `"row"`.
+        flexDirection: 'column',
+      },
+    ]}>
       <StatusBar
         //barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         //backgroundColor={backgroundStyle.backgroundColor}
         backgroundColor='#f4511e'
         barStyle="light-content"
       />
-      <ScrollView>
-        <Text>Some text</Text>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+      }}>
         <View>
-          <Text>Some more text</Text>
-          <Image source={{
-            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
-          }} style={{width: 200, height: 200}}></Image>
-        </View>
-        <View style={{
-          alignItems: 'center'
-          }}>
           <TextInput style={{
-              height: 40,
-              borderColor: 'gray',
-              borderWidth: 1,
-              width: '80%'
-            }} placeholder='You can type in me'
+            height: 40,
+            borderColor: 'gray',
+            borderWidth: 1,
+            width: '80%'
+          }} placeholder='You can type in me'
             onChangeText={newText => setText(newText)}
           ></TextInput>
         </View>
-        <View  style={{
-            width: '90%',
-            alignItems: 'center',
-            marginLeft: 10,
-            marginRight: 10,
-          }}>
+        <View>
           <Text>{text}</Text>
         </View>
-        <View  style={{
-            width: '90%',
-            alignItems: 'center',
-            marginLeft: 10,
-            marginRight: 10,
-          }}>
-            <Button
-              title="Go to Details"
-              onPress={() => navigation.navigate('Details')}
-            />
+        <View>
+          <Button
+            title="Go to Details"
+            onPress={() => navigation.navigate('Details')}
+          />
         </View>
-        <View  style={{
-            width: '90%',
-            alignItems: 'center',
-            marginLeft: 10,
-            marginRight: 10,
-          }}>
-            <Text style={{ fontFamily: 'Heebo-Regular', fontSize: 27 }}>שלום רב פונטים בעברית ץ</Text>
+        <View>
+          <Text style={{ fontFamily: 'Heebo-Regular', fontSize: 27 }}>שלום רב פונטים בעברית ץ</Text>
         </View>
-        <View  style={{
-            width: '90%',
-            alignItems: 'center',
-            marginLeft: 10,
-            marginRight: 10,
-          }}>
-            <FAB
-              visible={true}
-              color="green"
-              
-            >+</FAB>
-          </View>
-      </ScrollView>
-    </SafeAreaView>
+      </View>
+      <View style={{
+          flex: 1,
+        }}>
+          <FAB
+            visible={true}
+            color="green"
+            placement='left'
+          >+</FAB>
+        </View>
+    </View>
+
+
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+});
 
 export default HomeScreen;
