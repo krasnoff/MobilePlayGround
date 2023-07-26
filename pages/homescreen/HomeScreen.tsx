@@ -77,14 +77,14 @@ function HomeScreen({ navigation }: any): JSX.Element {
         </View>
       </View>
       <View style={{
-          flex: 1,
-        }}>
-          <FAB
-            visible={true}
-            color="green"
-            placement='left'
-          >+</FAB>
-        </View>
+        flex: 1,
+      }}>
+        <FAB
+          visible={true}
+          color="green"
+          placement='left'
+        >+</FAB>
+      </View>
     </View>
 
 
