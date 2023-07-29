@@ -21,6 +21,7 @@ import {
 import { useFonts } from 'expo-font';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { FAB } from '@rneui/themed';
+import Icon from '../../assets/icons/icon'
 
 
 function HomeScreen({ navigation }: any): JSX.Element {
@@ -34,6 +35,10 @@ function HomeScreen({ navigation }: any): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
 
   };
+
+  const fabClickHandler = () => {
+    console.log('fabClickHandler');
+  }
 
   return (
     <View style={[
@@ -58,7 +63,7 @@ function HomeScreen({ navigation }: any): JSX.Element {
             height: 40,
             borderColor: 'gray',
             borderWidth: 1,
-            width: '80%'
+            width: '100%'
           }} placeholder='You can type in me'
             onChangeText={newText => setText(newText)}
           ></TextInput>
@@ -83,7 +88,9 @@ function HomeScreen({ navigation }: any): JSX.Element {
           visible={true}
           color="green"
           placement='left'
-        >+</FAB>
+        >
+          <Icon name="Plus" height="35" width="35" fill="#ffffff" onPress={fabClickHandler} />
+        </FAB>
       </View>
     </View>
 
