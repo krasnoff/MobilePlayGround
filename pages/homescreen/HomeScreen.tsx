@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import {
   Alert,
   Button,
+  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
@@ -40,6 +41,9 @@ function HomeScreen({ navigation }: any): JSX.Element {
   }
 
   return (
+    <SafeAreaView style={{
+      flex: 1,
+    }}>
     <View style={[
       styles.container,
       {
@@ -93,7 +97,7 @@ function HomeScreen({ navigation }: any): JSX.Element {
         </FAB>
       </View>
     </View>
-
+    </SafeAreaView>
 
   );
 }
