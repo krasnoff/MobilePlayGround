@@ -7,10 +7,8 @@
 
 import React, { useState } from 'react';
 import {
+  Alert,
   Button,
-  Image,
-  SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -38,6 +36,7 @@ function HomeScreen({ navigation }: any): JSX.Element {
 
   const fabClickHandler = () => {
     console.log('fabClickHandler');
+    Alert.alert('You tapped the button!');
   }
 
   return (
@@ -88,8 +87,9 @@ function HomeScreen({ navigation }: any): JSX.Element {
           visible={true}
           color="green"
           placement='left'
+          onPress={() => fabClickHandler()}
         >
-          <Icon name="Plus" height="35" width="35" fill="#ffffff" onPress={fabClickHandler} />
+          <Icon name="Plus" height="35" width="35" fill="#ffffff" />
         </FAB>
       </View>
     </View>
