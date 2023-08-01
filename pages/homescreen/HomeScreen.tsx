@@ -91,7 +91,7 @@ function HomeScreen({ navigation }: any): JSX.Element {
           visible={true}
           color="green"
           placement='left'
-          onPress={() => fabClickHandler()}
+          onPress={() => navigation.navigate('MainMenu')}
         >
           <Icon name="Plus" height="35" width="35" fill="#ffffff" />
         </FAB>

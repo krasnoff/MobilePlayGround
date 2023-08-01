@@ -8,13 +8,14 @@
 import React, { useState } from 'react';
 import HomeScreen from './pages/homescreen/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DetailsScreen from './pages/details-screen/DetailedScreen';
 import { useFonts } from 'expo-font';
 import { Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import MainMenu from './pages/main-menu/MainMenu';
 
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 function LogoTitle() {
   const [fontsLoaded] = useFonts({
@@ -57,7 +58,12 @@ function App(): JSX.Element {
             headerShadowVisible: true, 
           }}
         />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} options={{
+          presentation: 'card'
+        }} />
+        <Stack.Screen name="MainMenu" component={MainMenu} options={{
+          presentation: 'modal'
+        }} />
       </Stack.Navigator>
     
     </NavigationContainer>
