@@ -11,11 +11,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import DetailsScreen from './pages/details-screen/DetailedScreen';
 import { useFonts } from 'expo-font';
 import { Text, View } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+// import { createStackNavigator } from '@react-navigation/stack';
 import MainMenu from './pages/main-menu/MainMenu';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 function LogoTitle() {
   const [fontsLoaded] = useFonts({
@@ -62,7 +63,9 @@ function App(): JSX.Element {
           presentation: 'card'
         }} />
         <Stack.Screen name="MainMenu" component={MainMenu} options={{
-          presentation: 'modal'
+          presentation: 'modal',
+          animation: 'slide_from_bottom',
+          headerShown: false
         }} />
       </Stack.Navigator>
     
