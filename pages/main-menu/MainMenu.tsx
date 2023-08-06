@@ -1,5 +1,6 @@
 import React from 'react';
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import FadeInView from './FadeInView';
 
 function MainMenu({ navigation }: any): JSX.Element {
   const rows = [
@@ -39,10 +40,10 @@ function MainMenu({ navigation }: any): JSX.Element {
           <View style={styles.column}>
             {colsItem.map((row, index) => (
               <View key={index} style={styles.row}>
-                <View style={styles.boxedComponent}>
+                <FadeInView style={styles.boxedComponent} delay={(colsItem.length - index) * 500}>
                   <Text style={styles.title}>{row.title}</Text>
                   <Text style={styles.subtitle}>{row.subtitle}</Text>
-                </View>
+                </FadeInView>
               </View>
             ))}
           </View>
